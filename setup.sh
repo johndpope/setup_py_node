@@ -2,7 +2,7 @@
 sudo apt-get -y update
 
 #install OS requirement
-sudo apt install -y gcc
+sudo apt install -y gcc htop traceroute
 
 #create mounting point
 mkdir /home/ubuntu/sharedata
@@ -27,13 +27,13 @@ echo 'export OS_AUTH_URL="https://auth.vexxhost.net/v2.0/"' >> /home/ubuntu/.bas
 echo 'export OS_REGION_NAME="ca-ymq-1"' >> /home/ubuntu/.bashrc
 
 # added by Anaconda2 4.2.0 installer
-echo 'export PATH="/home/ubuntu/sharedata/anaconda2/bin:$PATH"' >> /home/ubuntu/.bashrc
+echo 'export PATH="/home/ubuntu/anaconda2/bin:$PATH"' >> /home/ubuntu/.bashrc
 echo 'export PYTHONPATH="/rndModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
 
 #create symlink for rndModule in root /
 sudo ln -s /home/ubuntu/sharedata/rndModule /rndModule
 ################################################################################
-export PATH="/home/ubuntu/sharedata/anaconda2/bin:$PATH"
+export PATH="/home/ubuntu/anaconda2/bin:$PATH"
 jupyter notebook --generate-config
 
 #configure jupyter notebook
@@ -48,12 +48,10 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 
 ################################################################################
 
-conda install -y --c conda-forge xgboost
-
-conda install -y --c  conda-forge tensorflow
-conda install -y -c conda-forge theano
-conda install -y --c conda-forge/label/broken theano
-conda install -y --c conda-forge keras
+conda install -y -c conda-forge xgboost tensorflow keras pytorch
+# conda install -y -c  conda-forge tensorflow
+# conda install -y -c conda-forge
+# conda install -y -c conda-forge keras
 
 yes w | pip install fuzzywuzzy[speedup]
 yes w | pip install tqdm==4.19.1
