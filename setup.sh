@@ -48,10 +48,11 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 
 ################################################################################
 
-conda install -y -c conda-forge xgboost tensorflow keras pytorch
+conda install -y -c conda-forge xgboost keras pytorch
 # conda install -y -c  conda-forge tensorflow
 # conda install -y -c conda-forge
 # conda install -y -c conda-forge keras
+yes w | pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl
 
 yes w | pip install fuzzywuzzy[speedup]
 yes w | pip install tqdm==4.19.1
