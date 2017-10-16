@@ -33,7 +33,7 @@ echo 'export PYTHONPATH="/rndModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
 #create symlink for rndModule in root /
 sudo ln -s /home/ubuntu/sharedata/rndModule /rndModule
 ################################################################################
-
+export PATH="/home/ubuntu/sharedata/anaconda2/bin:$PATH"
 jupyter notebook --generate-config
 
 #configure jupyter notebook
@@ -62,7 +62,6 @@ yes w | pip install python-swiftclient
 yes w | pip install slacker
 yes w | pip install parmap
 yes w | pip install netifaces
-yes w | pip install autopep8
 yes w | pip install pysal==1.12.0
 yes w| pip install python-novaclient
 yes w| pip install python-swiftclient
@@ -79,7 +78,6 @@ jupyter contrib nbextension install --user
 echo '{
   "load_extensions": {
     "nbextensions_configurator/config_menu/main": true,
-    "code_prettify/autopep8": true,
     "snippets_menu/main": true,
     "codefolding/main": true,
     "highlighter/highlighter": true,
@@ -132,3 +130,6 @@ WantedBy=multi-user.target' > /etc/systemd/system/jupyter.service"""
 
 sudo systemctl daemon-reload
 sudo systemctl enable jupyter
+
+#start jupyter notebook Server
+sudo service jupyter start

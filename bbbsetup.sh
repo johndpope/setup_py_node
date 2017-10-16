@@ -33,7 +33,7 @@ echo 'export PYTHONPATH="/rndModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
 #create symlink for rndModule in root /
 sudo ln -s /home/ubuntu/sharedata/rndModule /rndModule
 ################################################################################
-
+export PATH="/home/ubuntu/sharedata/anaconda2/bin:$PATH"
 jupyter notebook --generate-config
 
 #configure jupyter notebook
