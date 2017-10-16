@@ -2,7 +2,7 @@
 sudo apt-get -y update
 
 #install OS requirement
-sudo apt install -y gcc
+sudo apt install -y gcc htop traceroute
 
 #create mounting point
 mkdir /home/ubuntu/sharedata
@@ -27,13 +27,13 @@ echo 'export OS_AUTH_URL="https://auth.vexxhost.net/v2.0/"' >> /home/ubuntu/.bas
 echo 'export OS_REGION_NAME="ca-ymq-1"' >> /home/ubuntu/.bashrc
 
 # added by Anaconda2 4.2.0 installer
-echo 'export PATH="/home/ubuntu/sharedata/anaconda2/bin:$PATH"' >> /home/ubuntu/.bashrc
+echo 'export PATH="/home/ubuntu/anaconda2/bin:$PATH"' >> /home/ubuntu/.bashrc
 echo 'export PYTHONPATH="/rndModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
 
 #create symlink for rndModule in root /
 sudo ln -s /home/ubuntu/sharedata/rndModule /rndModule
 ################################################################################
-export PATH="/home/ubuntu/sharedata/anaconda2/bin:$PATH"
+export PATH="/home/ubuntu/anaconda2/bin:$PATH"
 jupyter notebook --generate-config
 
 #configure jupyter notebook
@@ -48,13 +48,13 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 
 ################################################################################
 
-conda install -y --c conda-forge xgboost
+conda install -y -c conda-forge xgboost keras
 
-conda install -y --c  conda-forge tensorflow
-conda install -y -c conda-forge theano
-conda install -y --c conda-forge/label/broken theano
-conda install -y --c conda-forge keras
+#cpu version
+conda install -y -c pytorch torchvision -c soumith
+yes w | pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl
 
+yes w | pip install keras
 yes w | pip install fuzzywuzzy[speedup]
 yes w | pip install tqdm==4.19.1
 yes w | pip install python-openstackclient
@@ -62,7 +62,6 @@ yes w | pip install python-swiftclient
 yes w | pip install slacker
 yes w | pip install parmap
 yes w | pip install netifaces
-yes w | pip install autopep8
 yes w | pip install pysal==1.12.0
 yes w| pip install python-novaclient
 yes w| pip install python-swiftclient
@@ -79,7 +78,6 @@ jupyter contrib nbextension install --user
 echo '{
   "load_extensions": {
     "nbextensions_configurator/config_menu/main": true,
-    "code_prettify/autopep8": true,
     "snippets_menu/main": true,
     "codefolding/main": true,
     "highlighter/highlighter": true,
@@ -132,3 +130,6 @@ WantedBy=multi-user.target' > /etc/systemd/system/jupyter.service"""
 
 sudo systemctl daemon-reload
 sudo systemctl enable jupyter
+
+#start jupyter notebook Server
+sudo service jupyter start
