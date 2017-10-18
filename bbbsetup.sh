@@ -15,11 +15,9 @@ sudo mount -a
 #download anaconda
 wget https://repo.continuum.io/archive/Anaconda2-5.0.0.1-Linux-x86_64.sh -P /home/ubuntu
 #install Anaconda2 locally/remotely
-#bash /home/ubuntu/Anaconda2-5.0.0.1-Linux-x86_64.sh -b -p /home/ubuntu/sharedata/anaconda2
 bash /home/ubuntu/Anaconda2-5.0.0.1-Linux-x86_64.sh -b -p /home/ubuntu/anaconda2
 
 #export PATH
-
 echo 'export OS_TENANT_NAME="f50b2aeb-f768-42e4-bf99-06e5379a9d7b"' >> /home/ubuntu/.bashrc
 echo 'export OS_USERNAME="32dfab87-17bc-4cff-8e90-749474bf78d1"' >> /home/ubuntu/.bashrc
 echo 'export OS_PASSWORD="Fcr9SbdiaDtepSShFzteTxwypWLtKOMBSlcz4SpKzyz58EK2"' >> /home/ubuntu/.bashrc
@@ -28,10 +26,10 @@ echo 'export OS_REGION_NAME="ca-ymq-1"' >> /home/ubuntu/.bashrc
 
 # added by Anaconda2 4.2.0 installer
 echo 'export PATH="/home/ubuntu/anaconda2/bin:$PATH"' >> /home/ubuntu/.bashrc
-echo 'export PYTHONPATH="/rndModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
+echo 'export PYTHONPATH="/bbbModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
 
 #create symlink for rndModule in root /
-sudo ln -s /home/ubuntu/sharedata/rndModule /rndModule
+sudo ln -s /home/ubuntu/sharedata/bbbModule /bbbModule
 ################################################################################
 export PATH="/home/ubuntu/anaconda2/bin:$PATH"
 jupyter notebook --generate-config

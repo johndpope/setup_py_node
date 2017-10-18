@@ -48,25 +48,27 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 
 ################################################################################
 
+# yes w | pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl
+#
+# yes w | pip install keras
+# yes w | pip install fuzzywuzzy[speedup]
+# yes w | pip install tqdm==4.19.1
+# yes w | pip install python-openstackclient
+# yes w | pip install python-swiftclient
+# yes w | pip install slacker
+# yes w | pip install parmap
+# yes w | pip install netifaces
+# yes w | pip install pysal==1.12.0
+# yes w| pip install python-novaclient
+# yes w| pip install python-swiftclient
+# #database connectors
+# yes w| pip install redis==2.10.6 pymongo==3.5.1
+
+#conda install modules
 conda install -y -c conda-forge xgboost keras
-
-#cpu version
 conda install -y -c pytorch torchvision -c soumith
-yes w | pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl
-
-yes w | pip install keras
-yes w | pip install fuzzywuzzy[speedup]
-yes w | pip install tqdm==4.19.1
-yes w | pip install python-openstackclient
-yes w | pip install python-swiftclient
-yes w | pip install slacker
-yes w | pip install parmap
-yes w | pip install netifaces
-yes w | pip install pysal==1.12.0
-yes w| pip install python-novaclient
-yes w| pip install python-swiftclient
-#database connectors
-yes w| pip install redis==2.10.6 pymongo==3.5.1
+#pip install modules
+pip install -r /home/ubuntu/pip/requirements.txt
 
 ################################################
 # install and config jupyter extension
