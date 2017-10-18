@@ -1,4 +1,4 @@
-#!/bin/sh
+  #!/bin/sh
 sudo apt-get -y update
 
 #install OS requirement
@@ -13,7 +13,7 @@ sudo sh -c 'echo "10.0.0.10:/home/ubuntu/sharedata /home/ubuntu/sharedata nfs au
 sudo mount -a
 
 #download anaconda
-wget https://repo.continuum.io/archive/Anaconda2-5.0.0.1-Linux-x86_64.sh -P /home/ubuntu
+wget https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/Anaconda2-5.0.0.1-Linux-x86_64.sh -P /home/ubuntu
 #install Anaconda2 locally/remotely
 bash /home/ubuntu/Anaconda2-5.0.0.1-Linux-x86_64.sh -b -p /home/ubuntu/anaconda2
 
@@ -30,6 +30,9 @@ echo 'export PYTHONPATH="/bbbModule:$PYTHONPATH"' >> /home/ubuntu/.bashrc
 
 #create symlink for rndModule in root /
 sudo ln -s /home/ubuntu/sharedata/bbbModule /bbbModule
+
+#delete installation file
+rm /home/ubuntu/Anaconda2-5.0.0.1-Linux-x86_64.sh
 ################################################################################
 export PATH="/home/ubuntu/anaconda2/bin:$PATH"
 jupyter notebook --generate-config
@@ -64,7 +67,8 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 
 #conda install modules
 conda install -y -c conda-forge xgboost keras
-conda install -y -c pytorch torchvision -c soumith
+pip install https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/torch-0.2.0.post3-cp27-cp27mu-manylinux1_x86_64.whl
+
 #pip install modules
 pip install -r /home/ubuntu/pip/requirements.txt
 #for bbb node only

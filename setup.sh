@@ -13,7 +13,7 @@ sudo sh -c 'echo "10.0.0.3:/home/ubuntu/sharedata /home/ubuntu/sharedata nfs aut
 sudo mount -a
 
 #download anaconda
-wget https://repo.continuum.io/archive/Anaconda2-5.0.0.1-Linux-x86_64.sh -P /home/ubuntu
+wget https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/Anaconda2-5.0.0.1-Linux-x86_64.sh -P /home/ubuntu
 #install Anaconda2 locally/remotely
 #bash /home/ubuntu/Anaconda2-5.0.0.1-Linux-x86_64.sh -b -p /home/ubuntu/sharedata/anaconda2
 bash /home/ubuntu/Anaconda2-5.0.0.1-Linux-x86_64.sh -b -p /home/ubuntu/anaconda2
@@ -66,9 +66,10 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 
 #conda install modules
 conda install -y -c conda-forge xgboost keras
-conda install -y -c pytorch torchvision -c soumith
+pip install https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/torch-0.2.0.post3-cp27-cp27mu-manylinux1_x86_64.whl
+
 #pip install modules
-pip install -r /home/ubuntu/pip/requirements.txt
+pip install -r /home/ubuntu/setup_py_node/pip/requirements.txt
 
 ################################################
 # install and config jupyter extension
