@@ -2,7 +2,7 @@
 sudo apt-get -y update
 
 #install OS requirement
-sudo apt install -y gcc htop traceroute
+sudo apt install -y gcc htop traceroute libpython-dev python-dev libpq-dev
 
 #create mounting point
 mkdir /home/ubuntu/sharedata
