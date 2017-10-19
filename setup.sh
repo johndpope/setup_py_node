@@ -53,7 +53,7 @@ conda install -y -c conda-forge xgboost keras
 pip install https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/torch-0.2.0.post3-cp27-cp27mu-manylinux1_x86_64.whl
 
 #pip install modules
-pip install -r /home/ubuntu/setup_py_node/pip/requirements.txt
+pip install --upgrade -r /home/ubuntu/setup_py_node/pip/requirements.txt
 
 ################################################
 # install and config jupyter extension
