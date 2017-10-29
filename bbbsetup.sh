@@ -13,9 +13,9 @@ sudo sh -c 'echo "10.0.0.10:/home/ubuntu/sharedata /home/ubuntu/sharedata nfs au
 sudo mount -a
 
 #download anaconda
-wget https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/Anaconda3-5.0.1-MacOSX-x86_64.sh -P /home/ubuntu
+wget https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/Anaconda3-5.0.1-Linux-x86_64.sh -P /home/ubuntu
 #install Anaconda3 locally/remotely
-bash /home/ubuntu/Anaconda3-5.0.1-MacOSX-x86_64.sh -b -p /home/ubuntu/anaconda3
+bash /home/ubuntu/Anaconda3-5.0.1-Linux-x86_64.sh -b -p /home/ubuntu/anaconda3
 
 #export PATH
 echo 'export OS_TENANT_NAME="f50b2aeb-f768-42e4-bf99-06e5379a9d7b"' >> /home/ubuntu/.bashrc
