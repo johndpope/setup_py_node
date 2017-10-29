@@ -2,7 +2,7 @@
 sudo apt-get -y update
 
 #install OS requirement
-sudo apt install -y gcc htop traceroute
+sudo apt install -y gcc htop traceroute libpython-dev python-dev libpq-dev
 
 #create mounting point
 mkdir /home/ubuntu/sharedata
@@ -51,6 +51,9 @@ echo "c.NotebookApp.notebook_dir='/home/ubuntu/sharedata'" >> /home/ubuntu/.jupy
 #conda install modules
 conda install -y -c conda-forge xgboost keras
 pip install https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb5940d20f7a06380/python/torch-0.2.0.post3-cp27-cp27mu-manylinux1_x86_64.whl
+
+#pip install priority modules
+yes w |pip install pbr
 
 #pip install modules
 pip install --upgrade -r /home/ubuntu/setup_py_node/pip/requirements.txt
