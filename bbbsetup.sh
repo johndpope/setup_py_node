@@ -55,7 +55,7 @@ pip install https://object-storage-ca-ymq-1.vexxhost.net/v1/b86cfb0920c04d4fb594
 #pip install priority modules
 yes w |pip install pbr
 #pip install modules
-pip install --upgrade -r /home/ubuntu/setup_py_node/pip/requirements.txt
+# pip install --upgrade -r /home/ubuntu/setup_py_node/pip/requirements.txt
 #for bbb node only
 pip install --upgrade -r /home/ubuntu/setup_py_node/pip/bbb_requirements.txt
 
