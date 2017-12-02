@@ -109,6 +109,8 @@ Description=Jupyter Notebook Server
 [Service]
 Type=simple
 Environment="PATH=/home/ubuntu/anaconda2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+Environment=LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+Environment=CUDA_HOME=/usr/local/cuda
 ExecStart=/home/ubuntu/anaconda2/bin/jupyter-notebook
 User=ubuntu
 Group=ubuntu

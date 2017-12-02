@@ -13,3 +13,4 @@ tqdm==4.19.1
 backtrader
 coinmarketcap
 btfxwss
+bitex
