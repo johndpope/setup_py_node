@@ -15,4 +15,5 @@ coinmarketcap
 btfxwss
 bitex
 hyperopt
-pip install networkx==1.11
+networkx==1.11
+timestring
