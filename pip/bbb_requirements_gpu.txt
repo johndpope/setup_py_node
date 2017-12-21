@@ -1,4 +1,4 @@
-#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-#linux_x86_64.whl; sys_platform == "linux"
+#https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl; sys_platform == "linux"
 #keras==2.0.8
 netifaces==0.10.6
 parmap==1.5.1
@@ -18,5 +18,3 @@ hyperopt
 networkx==1.11
 timestring
 runipy
-thrift==0.10.0
-tornado==4.5.2
